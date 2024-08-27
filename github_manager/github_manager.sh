@@ -177,7 +177,7 @@ echo "3) Delete an existing repository"
 echo "4) Clone a repository"
 echo "5) update from existing repository"
 
-read -p "Enter your choice (1, 2, 3, or 4): " choice
+read -p "Enter your choice (1, 2, 3, 4, or 5): " choice
 
 # Use a case statement to handle the user's choice and call the corresponding function
 case "$choice" in
