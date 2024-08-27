@@ -155,12 +155,28 @@ clone_repo() {
 ###########################################################################
 ###########################################################################
 
+update-repo() {
+
+read -p "Enter the repository link (e.g. https://github.com/user/repo.git): " repo_link
+read -p "Enter the directory where you want to update from the repository (e.g. /path/to/directory): " update_dir
+cd "$update_dir"
+git pull origin main
+echo "Git repository updated."
+
+
+}
+
+###########################################################################
+###########################################################################
+
 # Prompt for repository action
 echo "Choose an option:"
 echo "1) Use an existing repository (Push changes)"
 echo "2) Create a new repository"
 echo "3) Delete an existing repository"
 echo "4) Clone a repository"
+echo "5) update from existing repository"
+
 read -p "Enter your choice (1, 2, 3, or 4): " choice
 
 # Use a case statement to handle the user's choice and call the corresponding function
@@ -178,16 +194,11 @@ case "$choice" in
     4)
         clone_repo
         ;;
+    5)
+        update-repo() 
+        ;;
     *)
         echo "Invalid choice. Exiting..."
         exit 2
         ;;
 esac
-
-
-
-
-
-
-
-
