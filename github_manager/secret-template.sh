@@ -3,9 +3,10 @@
 # and use your credintial
 
 # GitHub credentials
-GITHUB_USER="your user name"
-GITHUB_EMAIL="your github email"
+GITHUB_USER="Your-GitHub-Username"
+GITHUB_EMAIL="Your-email"
 GITHUB_PASSWORD="your password"
+GITHUB_TOKEN="you acces token"
 
 # Export credentials for use in commands
 export GITHUB_USER
