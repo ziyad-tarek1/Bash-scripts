@@ -12,3 +12,4 @@ GITHUB_TOKEN="you acces token"
 export GITHUB_USER
 export GITHUB_EMAIL
 export GITHUB_PASSWORD
+export GITHUB_TOKEN
