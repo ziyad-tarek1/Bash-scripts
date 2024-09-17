@@ -80,6 +80,10 @@ sudo apt-get upgrade -y
 echo "--------------------Installing Java--------------------"
 sudo apt-get install -y openjdk-17-jdk
 
+# the jdk path is /usr/lib/jvm/java-17-openjdk-amd64/ 
+# it should be in  JAVA_HOME field
+
+
 # Install Jenkins
 echo "--------------------Installing Jenkins--------------------"
 curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
