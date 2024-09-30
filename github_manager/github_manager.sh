@@ -155,15 +155,12 @@ clone_repo() {
 ###########################################################################
 ###########################################################################
 
-update-repo() {
-
-read -p "Enter the repository link (e.g. https://github.com/user/repo.git): " repo_link
-read -p "Enter the directory where you want to update from the repository (e.g. /path/to/directory): " update_dir
-cd "$update_dir"
-git pull origin main
-echo "Git repository updated."
-
-
+update_repo() {
+    read -p "Enter the repository link (e.g. https://github.com/user/repo.git): " repo_link
+    read -p "Enter the directory where you want to update from the repository (e.g. /path/to/directory): " update_dir
+    cd "$update_dir" || { echo "Error: Failed to enter directory. Exiting..."; exit 1; }
+    git pull origin main
+    echo "Git repository updated."
 }
 
 ###########################################################################
@@ -175,14 +172,13 @@ echo "1) Use an existing repository (Push changes)"
 echo "2) Create a new repository"
 echo "3) Delete an existing repository"
 echo "4) Clone a repository"
-echo "5) update from existing repository"
+echo "5) Update from existing repository"
 
 read -p "Enter your choice (1, 2, 3, 4, or 5): " choice
 
 # Use a case statement to handle the user's choice and call the corresponding function
 case "$choice" in
     1)
-
         push_to_existing_repo 
         ;;
     2)
@@ -195,7 +191,7 @@ case "$choice" in
         clone_repo
         ;;
     5)
-        update-repo() 
+        update_repo 
         ;;
     *)
         echo "Invalid choice. Exiting..."
